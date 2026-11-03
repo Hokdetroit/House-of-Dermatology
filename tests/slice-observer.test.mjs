@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs'
 import test from 'node:test'
 import vm from 'node:vm'
 
-const bundle = readFileSync(new URL('../public/site-assets/next/chunks/0r-~gfmzy7kz7.js', import.meta.url), 'utf8')
+const bundle = readFileSync(new URL('../public/site-assets/next/chunks/slice-observer-iframe-v2.js', import.meta.url), 'utf8')
 
 function mountObserver(height = 767) {
   const effects = []
@@ -61,4 +61,12 @@ test('non-intersecting entries do not become active', () => {
 
 test('fallback supports smaller viewport dimensions', () => {
   assert.equal(mountObserver(480)(null).get('section-one').offsetTop.fromViewportBottom, 480)
+})
+
+test('every captured page requests the new observer bundle instead of the cached original', () => {
+  for (const page of ['index', 'about', 'treatments', 'concerns', 'privacy-policy', 'terms-of-use']) {
+    const html = readFileSync(new URL(`../site-content/${page}.html`, import.meta.url), 'utf8')
+    assert.ok(html.includes('slice-observer-iframe-v2.js'), page)
+    assert.ok(!html.includes('0r-~gfmzy7kz7.js'), page)
+  }
 })
