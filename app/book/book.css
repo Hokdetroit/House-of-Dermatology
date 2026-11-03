@@ -123,3 +123,15 @@
     filter: none;
   }
 }
+
+.hod-logo .double-s {
+  transform-origin: 0 60%;
+  transition: transform 1s cubic-bezier(0.1, 0, 0, 1);
+}
+a:hover .hod-logo .double-s,
+.hod-logo:hover .double-s {
+  transform: rotateX(180deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hod-logo .double-s { transition: none; }
+}

@@ -1,18 +1,23 @@
+import { HOD_INFINITY_PATH } from './hod-infinity-path'
+
 export function OdysseeLogo({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 120 23"
+      width="76"
+      height="23"
+      viewBox="0 0 76 23"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      aria-label="House of Dermatology"
+      aria-label="House of Dermatology logo"
       role="img"
-      className={className}
+      className={`hod-logo ${className ?? ''}`}
     >
-      <text x="0" y="7" fontSize="7" textLength="120" lengthAdjust="spacingAndGlyphs" fill="currentColor" fontFamily="inherit">
-        HOUSE OF
+      <text x="0" y="22.4" fontSize="24.5" fill="currentColor" fontFamily="inherit">
+        H
       </text>
-      <text x="0" y="22" fontSize="14.5" textLength="120" lengthAdjust="spacingAndGlyphs" fill="currentColor" fontFamily="inherit">
-        DERMATOLOGY
+      <path className="double-s" d={HOD_INFINITY_PATH} fill="currentColor" />
+      <text x="76" y="22.4" fontSize="24.5" textAnchor="end" fill="currentColor" fontFamily="inherit">
+        D
       </text>
     </svg>
   )
