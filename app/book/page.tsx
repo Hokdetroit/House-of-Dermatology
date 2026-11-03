@@ -8,8 +8,8 @@ import { WhatToExpect } from '@/components/booking/what-to-expect'
 import { Reveal } from '@/components/booking/reveal'
 
 export const metadata: Metadata = {
-  title: 'Odyssée | Book Consultation',
-  description: 'Book a consultation at Odyssée, Hunters Hill. Personalised, evidence-based medical aesthetics for timeless results.',
+  title: 'House of Dermatology | Book Consultation',
+  description: 'Book a consultation at House of Dermatology, Detroit. Personalized, evidence-based medical aesthetics for timeless results.',
 }
 
 export default function BookPage() {

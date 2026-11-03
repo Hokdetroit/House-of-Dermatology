@@ -14,9 +14,9 @@ export function SiteFooter() {
             <div className="flex gap-10">
               <dt className="uppercase">A.</dt>
               <dd>
-                Garibaldi Village Square
+                Downtown Detroit
                 <br />
-                37 Alexandra St, Hunters Hill, NSW 2110
+                Detroit, MI
                 <br />
                 <a href="https://maps.app.goo.gl/vUsQGG21r9VXzvQb9" target="_blank" rel="noreferrer noopener" className="od-link">
                   Get Directions
@@ -26,23 +26,23 @@ export function SiteFooter() {
             <div className="flex gap-10">
               <dt className="uppercase">C.</dt>
               <dd>
-                <a href="mailto:info@odysseeclinic.com.au" className="od-link">
-                  info@odysseeclinic.com.au
+                <a href="mailto:info@houseofdermatology.com" className="od-link">
+                  info@houseofdermatology.com
                 </a>
                 <br />
-                <a href="tel:0291400868" className="od-link">
-                  (02) 9140 0868
+                <a href="tel:3135550100" className="od-link">
+                  (313) 555-0100
                 </a>
               </dd>
             </div>
             <div className="flex gap-10">
               <dt className="uppercase">S.</dt>
               <dd>
-                <a href="https://www.instagram.com/odysseeclinic/" target="_blank" rel="noreferrer noopener" className="od-link">
+                <a href="https://www.instagram.com/houseofdermatology/" target="_blank" rel="noreferrer noopener" className="od-link">
                   Instagram
                 </a>
                 {' / '}
-                <a href="https://odysseeaesthetic.dapplecrm.com/start/giftcard" target="_blank" rel="noreferrer noopener" className="od-link">
+                <a href="/book" target="_blank" rel="noreferrer noopener" className="od-link">
                   Gift Cards
                 </a>
               </dd>
@@ -57,7 +57,7 @@ export function SiteFooter() {
             </a>
           </div>
         </div>
-        <p className="text-sm opacity-60">{'\u00A9'}2026 Odyssée Clinic</p>
+        <p className="text-sm opacity-60">{'\u00A9'}2026 House of Dermatology</p>
       </div>
     </footer>
   )

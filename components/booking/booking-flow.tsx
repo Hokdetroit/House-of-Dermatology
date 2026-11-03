@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-const BOOKING_URL = 'https://odysseeaesthetic.dapplecrm.com/start/book'
+const BOOKING_URL = '/book'
 
 const focusAreas = [
   { id: 'facial', title: 'Facial Aesthetics & Structure', detail: 'Lines, volume, lips, contouring and jawline.' },
@@ -99,7 +99,7 @@ export function BookingFlow() {
       {step === 0 && (
         <div key="focus" className="od-step flex flex-col gap-6">
           <p className="max-w-xl text-[18px] leading-snug opacity-80">
-            Which area of care brings you to Odyssée? This helps us prepare for your visit.
+            Which area of care brings you to House of Dermatology? This helps us prepare for your visit.
           </p>
           <div role="radiogroup" aria-label="Area of focus">
             {focusAreas.map((item, index) => (

@@ -7,7 +7,7 @@ const stages = [
   },
   {
     title: 'Assess',
-    body: 'Your clinician evaluates your facial architecture and skin integrity, honouring your natural anatomy.',
+    body: 'Your clinician evaluates your facial architecture and skin integrity, honoring your natural anatomy.',
   },
   {
     title: 'Plan',
@@ -49,12 +49,12 @@ export function WhatToExpect() {
       <Reveal className="mx-auto mt-24 max-w-[1440px] px-5">
         <p className="text-[18px] leading-snug">
           {'Prefer to speak with us? Call '}
-          <a href="tel:0291400868" className="od-link">
-            (02) 9140 0868
+          <a href="tel:3135550100" className="od-link">
+            (313) 555-0100
           </a>
           {' or email '}
-          <a href="mailto:info@odysseeclinic.com.au" className="od-link">
-            info@odysseeclinic.com.au
+          <a href="mailto:info@houseofdermatology.com" className="od-link">
+            info@houseofdermatology.com
           </a>
           .
         </p>

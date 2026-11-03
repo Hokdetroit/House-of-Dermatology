@@ -21,8 +21,8 @@ export function BookingHero() {
             className="od-line-in max-w-md text-[18px] leading-snug opacity-80"
             style={{ '--delay': '450ms' } as CSSProperties}
           >
-            Every treatment at Odyssée begins with listening. Tell us a little about what brings you here, then
-            choose a time that suits you at our Hunters Hill clinic.
+            Every treatment at House of Dermatology begins with listening. Tell us a little about what brings you here, then
+            choose a time that suits you at our Detroit clinic.
           </p>
         </div>
       </div>
