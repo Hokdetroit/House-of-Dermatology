@@ -1,0 +1,4 @@
+/* Content must remain visible even if the original entrance timeline never completes. */
+.z-preloader { display: none !important; }
+img.opacity-0 { opacity: 1 !important; }
+video { background-color: #a9a09a; background-position: center; background-size: cover; }
