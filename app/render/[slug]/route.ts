@@ -17,12 +17,14 @@ export async function GET(request: NextRequest, context: { params: Promise<{ slu
   // Never hide the server-rendered page behind a client-controlled loading gate.
   // Use the ordinary public asset path for styles, independent of Next's runtime.
   const html = source
+    .replace(/\?dpl=dpl_[A-Za-z0-9]+/g, '')
+    .replace(/ data-dpl-id="[^"]*"/g, '')
     .replace(/(<link\b[^>]*href=")\/_next\/static\/(\S+?\.css)/gi, '$1/site-assets/next/$2')
     .replace('</head>', `<link rel="stylesheet" href="/site-assets/preview.css"><style>${posterStyles}</style></head>`)
   return new Response(html, {
     headers: {
       'Content-Type': 'text/html; charset=utf-8',
-      'Cache-Control': 'public, max-age=0, must-revalidate',
+      'Cache-Control': 'no-store',
     },
   })
 }
