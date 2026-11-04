@@ -8,6 +8,11 @@ const posterStyles = manifest.media
   .map((asset) => `video[poster^=${JSON.stringify(asset.source.split('?')[0])}]{background-image:url(${JSON.stringify(asset.local)})}`)
   .join('\n')
 
+// The captured bundles resize observed elements inside their own observer callbacks
+// (text splitting, spacer sizing). Deferring delivery to the next frame breaks that
+// synchronous loop so the browser never reports undelivered notifications.
+const resizeObserverShim = `<script>(()=>{const N=window.ResizeObserver;if(!N||N.__deferred)return;class D extends N{constructor(c){let f=0,q=null;super((e,o)=>{q=e;if(f)return;f=requestAnimationFrame(()=>{f=0;const b=q;q=null;c(b,o)})})}}D.__deferred=true;window.ResizeObserver=D})()</script>`
+
 const pages = new Set(['index', 'about', 'treatments', 'concerns', 'privacy-policy', 'terms-of-use'])
 
 export async function GET(request: NextRequest, context: { params: Promise<{ slug: string }> }) {
@@ -22,6 +27,7 @@ export async function GET(request: NextRequest, context: { params: Promise<{ slu
     .replace(/ data-dpl-id="[^"]*"/g, '')
     .replaceAll('/book', '/book')
     .replace(/(<link\b[^>]*href=")\/_next\/static\/(\S+?\.css)/gi, '$1/site-assets/next/$2')
+    .replace(/<head\b[^>]*>/i, (head) => head + resizeObserverShim)
     .replace('</head>', `<link rel="stylesheet" href="/site-assets/preview.css"><style>${posterStyles}</style></head>`)
   return new Response(html, {
     headers: {
