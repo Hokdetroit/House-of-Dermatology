@@ -3,8 +3,8 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Odyssée',
-  description: 'Medical aesthetics for timeless results. Discover personalised, evidence-based aesthetic care at Odyssée in Hunters Hill.',
+  title: 'House of Dermatology',
+  description: 'Medical aesthetics for timeless results. Discover personalized, evidence-based aesthetic care at House of Dermatology in Detroit.',
   generator: 'v0.app',
   icons: {
     icon: [

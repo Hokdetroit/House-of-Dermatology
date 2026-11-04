@@ -6,10 +6,10 @@ const nextConfig = {
   async rewrites() {
     return {
       beforeFiles: [
-        { source: '/_next/static/:path*', destination: '/site-assets/next/:path*' },
         { source: '/', destination: '/render/index' },
         ...['about', 'treatments', 'concerns', 'privacy-policy', 'terms-of-use'].map((slug) => ({ source: `/${slug}`, destination: `/render/${slug}` })),
       ],
+      fallback: [{ source: '/_next/static/:path*', destination: '/site-assets/next/:path*' }],
     }
   },
   async headers() {

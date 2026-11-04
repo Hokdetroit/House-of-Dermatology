@@ -1,0 +1,137 @@
+@font-face {
+  font-family: 'psTimes';
+  src: url('/site-assets/next/media/PSTimes_Regular-s.p.0poli67eyc7.0.otf') format('opentype');
+  font-weight: 350;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'baselGrotesk';
+  src: url('/site-assets/next/media/Basel_Grotesk_Regular-s.p.03d388.7g3205.woff2') format('woff2');
+  font-weight: 430;
+  font-display: swap;
+}
+
+.od-page {
+  background: var(--color-od-bg);
+  color: var(--color-od-blue);
+  font-family: var(--font-od-serif);
+  font-feature-settings: 'ss01' on, 'liga' off, 'clig' off;
+}
+
+.od-caps {
+  font-family: var(--font-od-sans);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.od-link {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.8s var(--ease-od);
+}
+
+.od-link:hover,
+.od-link:focus-visible,
+.od-link[aria-current='page'] {
+  background-position: 0 100%;
+  background-size: 100% 1px;
+}
+
+.od-logo .double-s {
+  transform-origin: 0% 60%;
+  transition: transform 1s var(--ease-od);
+}
+
+.od-logo:hover .double-s {
+  transform: rotateX(180deg);
+}
+
+.od-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  filter: blur(6px);
+  transition:
+    opacity 1.2s var(--ease-od),
+    transform 1.2s var(--ease-od),
+    filter 1.2s var(--ease-od);
+  transition-delay: var(--delay, 0ms);
+}
+
+.od-reveal[data-visible='true'] {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.od-hero-image {
+  animation: od-zoom 2.4s var(--ease-od) both;
+}
+
+.od-line-in {
+  animation: od-rise 1.4s var(--ease-od) both;
+  animation-delay: var(--delay, 0ms);
+}
+
+.od-step {
+  animation: od-step 0.9s var(--ease-od) both;
+}
+
+@keyframes od-zoom {
+  from {
+    transform: scale(1.08);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes od-rise {
+  from {
+    transform: translateY(110%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes od-step {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .od-reveal,
+  .od-hero-image,
+  .od-line-in,
+  .od-step {
+    animation: none;
+    transition: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+.hod-logo .double-s {
+  transform-origin: 0 60%;
+  transition: transform 1s cubic-bezier(0.1, 0, 0, 1);
+}
+a:hover .hod-logo .double-s,
+.hod-logo:hover .double-s {
+  transform: rotateX(180deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hod-logo .double-s { transition: none; }
+}
