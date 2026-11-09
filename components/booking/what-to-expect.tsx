@@ -19,14 +19,21 @@ export function WhatToExpect() {
   return (
     <section aria-labelledby="expect-heading" className="pb-24 md:pb-40">
       <div className="relative h-[60svh] overflow-hidden">
-        <img
-          src="/site-assets/media/a40de43fd485fe51d91b.webp"
-          alt=""
+        <video
+          src="/site-assets/videos/KPGV1XD6O5cOIjbvgI9gju6ONgFCF3f600Vx00SLBswTw.mp4"
+          poster="/site-assets/media/a40de43fd485fe51d91b.webp"
+          aria-label="House of Dermatology brand film"
+          autoPlay
+          muted
+          loop
+          playsInline
+          controls
+          preload="metadata"
           width={1280}
           height={800}
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-od-blue/10" aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-0 bg-od-blue/10" aria-hidden="true" />
       </div>
       <div className="mx-auto mt-24 grid max-w-[1440px] gap-12 px-5 md:mt-32 md:grid-cols-12 md:gap-5">
         <Reveal className="md:col-span-4">
