@@ -25,6 +25,12 @@ export async function GET(request: NextRequest, context: { params: Promise<{ slu
     // Flight payload chunks can split a tag; strip only complete IDs so URLs stay intact.
   .replace(/\?dpl=dpl_[A-Za-z0-9]{28}(?![A-Za-z0-9])/g, '')
     .replace(/ data-dpl-id="[^"]*"/g, '')
+    .replace(/<video\b[^>]*>/g, (tag) => {
+      const id = tag.match(/poster="https:\/\/image\.mux\.com\/([A-Za-z0-9]+)\//)?.[1]
+      if (!id) return tag
+      const autoplay = /\bmuted(?:[\s=>])/.test(tag) ? ' autoplay' : ''
+      return tag.replace('<video', `<video src="/site-assets/videos/${id}.mp4"${autoplay}`)
+    })
     .replaceAll('/book', '/book')
     .replace(/(<link\b[^>]*href=")\/_next\/static\/(\S+?\.css)/gi, '$1/site-assets/next/$2')
     .replace(/<head\b[^>]*>/i, (head) => head + resizeObserverShim)
