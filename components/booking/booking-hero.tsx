@@ -27,9 +27,16 @@ export function BookingHero() {
         </div>
       </div>
       <div className="relative overflow-hidden md:col-span-5 md:col-start-8">
-        <img
-          src="/site-assets/media/54e465df83092261a5de.webp"
-          alt="Close-up portrait showing luminous, natural skin"
+        <video
+          src="/site-assets/videos/ut01RvbnOMm3QzJ84DXgMj6KLwvE5cFLDncuzqAsSdGM.mp4"
+          poster="/site-assets/media/54e465df83092261a5de.webp"
+          aria-label="Close-up portrait showing luminous, natural skin"
+          autoPlay
+          muted
+          loop
+          playsInline
+          controls
+          preload="metadata"
           width={1280}
           height={1820}
           className="od-hero-image aspect-[4/5] w-full object-cover"
