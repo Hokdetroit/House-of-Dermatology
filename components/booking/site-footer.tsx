@@ -57,7 +57,13 @@ export function SiteFooter() {
             </a>
           </div>
         </div>
-        <p className="text-sm opacity-60">{'\u00A9'}2026 House of Dermatology</p>
+        <div className="flex flex-wrap items-center justify-between gap-6 text-sm">
+          <p className="opacity-60">{'\u00A9'}2026 House of Dermatology</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-3">
+            <a href="https://www.hokdetroit.com" target="_blank" rel="noopener noreferrer" className="od-link">Digital marketing and design by House of Karma</a>
+            <a href="https://www.studioescrow.cloud" target="_blank" rel="noopener noreferrer" className="od-link">Powered by StudioEscrow</a>
+          </div>
+        </div>
       </div>
     </footer>
   )
